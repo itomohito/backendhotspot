@@ -1,0 +1,252 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "My User Project CRUD",
+    "description": "My User Project Application API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Users",
+      "description": "API for users in the system"
+    },
+    {
+      "name": "Admins",
+      "description": "API for admins in the system"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+
+    "/userprofile": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Find one user in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Users"
+            }
+          }
+        }
+      }
+    },
+
+      "/userprofile/createUser": {
+        "post": {
+          "tags": [
+            "User"
+          ],
+          "description": "Create new user in system",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "User that we want to create",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "produces": [
+            "application/json/ejs"
+          ],
+          "summary": "Create new User",
+          "responses": {
+            "400": {
+              "description": "Field cannot be empty",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            },
+            "500": {
+              "description": "Creation error"
+            }
+          }
+        }
+      },
+
+    "/userprofile/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "Login user into account",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to log",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json/ejs"
+        ],
+        "responses": {
+          "400": {
+            "description": "Field cannot be empty",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+
+    "/adminprofile": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Find one admin in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Admins"
+            }
+          }
+        }
+      }
+    },
+
+
+    "/adminprofile/createAdmin": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "description": "Create admin user in system",
+        "parameters": [
+          {
+            "name": "admin",
+            "in": "body",
+            "description": "Admin that we want to create",
+            "schema": {
+              "$ref": "#/definitions/Admin"
+            }
+          }
+        ],
+        "produces": [
+          "application/json/ejs"
+        ],
+        "responses": {
+          "400": {
+            "description": "Field cannot be empty",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "500": {
+            "description": "Creation error"
+          }
+        }
+      }
+    },
+
+    "/adminprofile/loginadmin": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "description": "Admin user into account",
+        "parameters": [
+          {
+            "name": "admin",
+            "in": "body",
+            "description": "Admin that we want to log",
+            "schema": {
+              "$ref": "#/definitions/Admin"
+            }
+          }
+        ],
+        "produces": [
+          "application/json/ejs"
+        ],
+        "responses": {
+          "400": {
+            "description": "Field cannot be empty",
+            "schema": {
+              "$ref": "#/definitions/Admin"
+            }
+          }
+        }
+      }
+    }
+
+    },
+    "definitions": {
+      "User": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string",
+            "default": " "
+          },
+          "age": {
+            "type": "number"
+          }
+        }
+      },
+      "Admin": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string",
+            "default": " "
+          },
+          "age": {
+            "type": "number"
+          }
+        }
+      },
+      "Admins": {
+        "type": "array",
+        "$ref": "#/definitions/Admin"
+      },
+      "Users": {
+        "type": "array",
+        "$ref": "#/definitions/User"
+      }
+    }
+}
+
+
