@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive Event Organizer Website Design Tutorial</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">'
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    <script type="text/javascript">
+        var map;
+
+        DG.then(function () {
+            map = DG.map('map', {
+                center: [54.98, 82.89],
+                zoom: 13
+            });
+
+            DG.marker([54.98, 82.89]).addTo(map).bindPopup('Вы кликнули по мне!');
+        });
+    </script>
+
+</head>
+
+
+<body>
+
+<header class="header">
+
+    <a class="logo"><span>Hot</span>Spot</a>
+
+    <nav class="navbar">
+        <a href="">home</a>
+        <a href="/tops">tops</a>
+        <a href="#map">maps</a>
+        <a href="/login">login</a>
+        <a href="/loginadmin">Admin login</a>
+    </nav>
+    <div id="menu-bars" class="fas fa-bars"></div>
+
+</header>
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>its time to chill! the best and hottest <span> events of the city </span></h3>
+    </div>
+
+    <div class="swiper-container home-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/slide-1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/slide-2.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/slide-3.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/slide-4.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/slide-5.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/slide-6.jpg" alt=""></div>
+        </div>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- service section starts  -->
+
+<section class="service" id="service">
+
+    <h1 class="heading"> our <span>categories</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Trips</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, suscipit.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-envelope"></i>
+            <h3>Concerts</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, suscipit.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-music"></i>
+            <h3>Cinema</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, suscipit.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-utensils"></i>
+            <h3>Stand-ups</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, suscipit.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-photo-video"></i>
+            <h3>Theatre</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, suscipit.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-birthday-cake"></i>
+            <h3>Where to eat</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, suscipit.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-birthday-cake"></i>
+            <h3>New places</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, suscipit.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-birthday-cake"></i>
+            <h3>Job offers</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, suscipit.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- service section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"><span>Hot topic of</span> the week </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="/images/batyr.jpeg" alt="">
+        </div>
+
+        <div class="content">
+            <h3>Music evening dedicated to Batyrkhan Shukenov's music</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam labore fugiat ut esse perferendis perspiciatis provident dolores fuga in facilis culpa possimus, quia praesentium itaque, sapiente quasi harum rem asperiores<span id="dots">...</span><span id="more">e
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero expedita incidunt provident quibusdam aut odit, numquam nesciunt similique nisi.</span></p>
+            <button onclick="showMore()" id="myBtn">Read more</button>
+
+            <script>
+                function showMore() {
+                    var dots = document.getElementById("dots");
+                    var moreText = document.getElementById("more");
+                    var btnText = document.getElementById("myBtn");
+
+                    if (dots.style.display === "none") {
+                        dots.style.display = "inline";
+                        btnText.innerHTML = "Read more";
+                        moreText.style.display = "none";
+                    } else {
+                        dots.style.display = "none";
+                        btnText.innerHTML = "Read less";
+                        moreText.style.display = "inline";
+                    }
+                }
+            </script>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- gallery section starts  -->
+
+<section class="gallery" id="gallery">
+
+    <h1 class="heading">Spotted <span>Memories</span></h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="/images/g-1.jpg" alt="">
+            <h3 class="title">Biggest concert</h3>
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="/images/g-2.jpg" alt="">
+            <h3 class="title">Triple wedding</h3>
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="/images/g-3.jpg" alt="">
+            <h3 class="title">Holi Holiday?</h3>
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="/images/g-4.jpg" alt="">
+            <h3 class="title">Free foodstation</h3>
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="/images/g-5.jpg" alt="">
+            <h3 class="title">True emotions</h3>
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="/images/g-6.jpg" alt="">
+            <h3 class="title">pMoldanazar's concert</h3>
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="/images/g-7.jpg" alt="">
+            <h3 class="title">photos and events</h3>
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="/images/g-8.jpg" alt="">
+            <h3 class="title">Happy easter day</h3>
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- gallery section ends -->
+
+<!-- review section starts  -->
+
+<section class="reivew" id="review">
+
+    <h1 class="heading">Citizen's <span>TedX</span></h1>
+
+    <div class="review-slider swiper-container">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <i class="fas fa-quote-right"></i>
+                <div class="user">
+                    <img src="/images/pic-1.png" alt="">
+                    <div class="user-info">
+                        <h3>john deo</h3>
+                        <span>happy clients</span>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolor dicta cum. Eos beatae eligendi, magni numquam nemo sed ut corrupti, ipsam iure nisi unde et assumenda perspiciatis voluptatibus nihil.</p>
+            </div>
+
+            <div class="swiper-slide box">
+                <i class="fas fa-quote-right"></i>
+                <div class="user">
+                    <img src="/images/pic-2.png" alt="">
+                    <div class="user-info">
+                        <h3>john deo</h3>
+                        <span>happy clients</span>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolor dicta cum. Eos beatae eligendi, magni numquam nemo sed ut corrupti, ipsam iure nisi unde et assumenda perspiciatis voluptatibus nihil.</p>
+            </div>
+
+            <div class="swiper-slide box">
+                <i class="fas fa-quote-right"></i>
+                <div class="user">
+                    <img src="/images/pic-3.png" alt="">
+                    <div class="user-info">
+                        <h3>john deo</h3>
+                        <span>happy clients</span>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolor dicta cum. Eos beatae eligendi, magni numquam nemo sed ut corrupti, ipsam iure nisi unde et assumenda perspiciatis voluptatibus nihil.</p>
+            </div>
+
+            <div class="swiper-slide box">
+                <i class="fas fa-quote-right"></i>
+                <div class="user">
+                    <img src="/images/pic-4.png" alt="">
+                    <div class="user-info">
+                        <h3>john deo</h3>
+                        <span>happy clients</span>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolor dicta cum. Eos beatae eligendi, magni numquam nemo sed ut corrupti, ipsam iure nisi unde et assumenda perspiciatis voluptatibus nihil.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- review section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>branches</h3>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> mumbai </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> jogeshwari </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> goregaon </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> navi mumbai </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> andheri </a>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> tops </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> maps </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> login </a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> dargulovaa@gmail.com </a>
+            <a href="#"> <i class="fas fa-envelope"></i> sardarbekovaa@gmail.com </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> nur-sultan, kazakhstan </a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="map">
+    <div id="map" style="width:500px; height:400px"></div>
+    <section>
+        <!-- footer section ends -->
+
+        <!-- theme toggler  -->
+
+        <div class="theme-toggler">
+
+            <div class="toggle-btn">
+                <i class="fas fa-cog"></i>
+            </div>
+
+            <h3>choose color</h3>
+
+            <div class="buttons">
+                <div class="theme-btn" style="background: #3867d6;"></div>
+                <div class="theme-btn" style="background: #f7b731;"></div>
+                <div class="theme-btn" style="background: #ff0033;"></div>
+                <div class="theme-btn" style="background: #20bf6b;"></div>
+                <div class="theme-btn" style="background: #fa8231;"></div>
+                <div class="theme-btn" style="background: #FC427B;"></div>
+            </div>
+
+        </div>
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <!-- custom js file link  -->
+        <script src="js/script.js"></script>
+
+</body>
+</html>
+
+
